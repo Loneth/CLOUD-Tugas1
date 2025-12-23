@@ -1,6 +1,4 @@
 #!/bin/bash
-set -euo pipefail
-exec > >(tee /var/log/user-data.log | logger -t user-data -s 2>/dev/console) 2>&1
 
 S3="daedaedae"
 PROJECT="/home/ubuntu/app"
@@ -36,7 +34,9 @@ usermod -aG docker ubuntu
 mkdir -p "$PROJECT"
 cd "$PROJECT"
 
-git clone "${REPO}" "$PROJECT"
+git clone "${REPO}" temp
+cp -pRn temp/. .
+rm -rf temp
 
 aws s3 cp "s3://${S3}/private/tugas1.env" .env
 
