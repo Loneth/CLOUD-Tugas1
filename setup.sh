@@ -2,7 +2,7 @@
 
 S3="daedaedae"
 PROJECT="/home/ubuntu/app"
-REPO="https://github.com/Loneth/OK-Tugas1"
+REPO="https://github.com/Loneth/CLOUD-Tugas1"
 
 apt-get update -yq
 apt-get install -yq ca-certificates curl unzip gnupg lsb-release
